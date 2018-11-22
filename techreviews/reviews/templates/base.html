@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tech Reviews</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
+
+    </head>
+    <body>
+        <div class='jumbotron'>
+            <h1>Tech Reviews</h1>
+        </div>
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'index' %}">Tech Reviews</a>
+                </div>
+                <ul class="nav navbar-nav">
+               
+               
+                </ul>
+                </div>
+                </nav>
+        <p>&nbsp;</p>
+        <div class="container-fluid">
+        {% block content %}
+        {% endblock content %}
+        </div>
+    </body>
+</html>
