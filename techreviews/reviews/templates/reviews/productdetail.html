@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>{{ product.productname }}</h2>
+<h2><a href="{% url 'productreviews' prod_id=product.id %}">{{ product.productname }}</a></h2>
+<p>Get reviews by clicking the product name</p>
 <p>{{ product.techtype }}</p>
     <p>{{ product.user }}</p>
     <p>{{ product.entrydate }}</p>

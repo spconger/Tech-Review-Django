@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for TechReview in prodreviews %}
+
+<h2> {{ TechReview.reviewtitle}}</h2>
+<p>{{ TechReview.product }}</p>
+    <p>{{ TechReview.reviewdate }}</p>
+   
+     <p>{{ TechReview.reviewer }}</p>
+   
+    
+    <p>{{ TechReview.rating }}</p>
+    <p>{{ TechReview.reviewText }}</p>
+   {% endfor %}
+
+{% endblock %}
