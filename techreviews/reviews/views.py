@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import TechProduct, TechReview
+from .forms import TechProductForm, TechReviewForm
 
 # Create your views here.
 def index(request):
@@ -18,3 +19,30 @@ def productreviews(request, prod_id):
     prodreveiws=TechReview.objects.filter(product=prod_id)
     return render(request, 'reviews/productreview.html', {'prodreviews': prodreveiws})
 
+def newProduct(request):
+    form=TechProductForm
+
+    if request.method=='POST':
+        form=TechProductForm(request.POST)
+        if form.is_valid():
+            
+            post=form.save(commit=True)
+            post.save()
+            form=TechProductForm()
+    else:
+        form=TechProductForm()
+    return render(request, 'reviews/newproduct.html', {'form': form})
+
+def newReview(request):
+    form=TechReviewForm
+
+    if request.method=='POST':
+        form=TechReviewForm(request.POST)
+        if form.is_valid():
+            
+            post=form.save(commit=True)
+            post.save()
+            form=TechReviewForm()
+    else:
+        form=TechReviewForm()
+    return render(request, 'reviews/newreview.html', {'form': form})
