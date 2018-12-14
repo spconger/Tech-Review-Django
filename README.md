@@ -7,3 +7,4 @@ A sample django app
 <p><strong>Fourth commit:</strong> I added the product view and the product detail view and templates for each</p>
 <p><strong>Fifth commit</strong> For this commit I added a link in details to show reviews for products.</p>
 <p><strong>Sixth commit</strong> Added new product and new reveiw forms along with the views, urls and templates to manage those forms.</p>
+<p><strong>Seventh Commit</strong> Added login and logout functionality and made it so a user must be logged in to use forms</p>
