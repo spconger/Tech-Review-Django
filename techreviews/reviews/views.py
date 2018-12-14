@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import TechProduct, TechReview
 from .forms import TechProductForm, TechReviewForm
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
 
 # Create your views here.
 def index(request):
@@ -19,6 +21,7 @@ def productreviews(request, prod_id):
     prodreveiws=TechReview.objects.filter(product=prod_id)
     return render(request, 'reviews/productreview.html', {'prodreviews': prodreveiws})
 
+@login_required
 def newProduct(request):
     form=TechProductForm
 
@@ -33,6 +36,7 @@ def newProduct(request):
         form=TechProductForm()
     return render(request, 'reviews/newproduct.html', {'form': form})
 
+@login_required
 def newReview(request):
     form=TechReviewForm
 
@@ -46,3 +50,9 @@ def newReview(request):
     else:
         form=TechReviewForm()
     return render(request, 'reviews/newreview.html', {'form': form})
+
+def logoutmessage(request):
+    return render(request, 'reviews/logoutmessage.html')
+
+def loginmessage(request):
+    return render(request, 'reviews/loginmessage.html')

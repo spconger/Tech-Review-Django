@@ -8,6 +8,9 @@ urlpatterns = [
     path('productreviews/<int:prod_id>',views.productreviews, name='productreviews'),
     path('newProduct/', views.newProduct, name='newProduct'),
     path('newReview/', views.newReview, name='newReview'),
+    path('logoutmessage', views.logoutmessage, name='message'),
+    path('loginmessage', views.loginmessage, name='welcome'),
+
 
 
 ]
