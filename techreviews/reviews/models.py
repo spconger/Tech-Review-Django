@@ -2,6 +2,7 @@ from django.db import models
 from  django.contrib.auth.models import User
 
 # Create your models here.
+# Each model will become a table in the database
 class TechType(models.Model):
     typename = models.CharField(max_length=255)
     typedescription=models.CharField(max_length=255)
